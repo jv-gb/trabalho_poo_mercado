@@ -1,18 +1,17 @@
 package supermercado;
 
-
-public class Acougue {
+public class Acougue implements AcougueInterface {
 //atributos com tipo e visibilidade especificada
-    private boolean temcarneDePorco;
-    private boolean temcarneDeFrango;
-    private boolean temcarneDeBoi;
 
-    private float precoPorcoKg;
-    private float precoFrangoKg;
+    private boolean temcarneDeBoi;
+    private boolean temcarneDeFrango;
+    private boolean temcarneDePorco;
+
     private float precoBoiKg;
+    private float precoFrangoKg;
+    private float precoPorcoKg;
 
     private float saldoAcougue;
-    private float saldoTotalMercado;
 
     public Acougue() {
         this.setTemcarneDePorco(true);
@@ -95,12 +94,26 @@ public class Acougue {
         this.saldoAcougue = saldoAcougue;
     }
 
-    public float getSaldoTotalMercado() {
-        return saldoTotalMercado;
+    @Override
+    public void comprarBoi(int quantidade) {
+        if (this.temcarneDeBoi) {
+            this.setSaldoAcougue(getSaldoAcougue() + (this.getPrecoBoi() * quantidade));
+        }
+
     }
 
-    public void setSaldoTotalMercado(float saldoTotalMercado) {
-        this.saldoTotalMercado = saldoTotalMercado;
+    @Override
+    public void comprarFrango(int quantidade) {
+        if (this.temcarneDeFrango) {
+            this.setSaldoAcougue(getSaldoAcougue() + (this.getPrecoFrango() * quantidade));
+        }
+    }
+
+    @Override
+    public void comprarPorco(int quantidade) {
+        if (this.temcarneDePorco) {
+            this.setSaldoAcougue(getSaldoAcougue() + (this.getPrecoPorco() * quantidade));
+        }
     }
 
 }

@@ -1,6 +1,6 @@
 package supermercado;
 
-public class UtensiliosDomesticos {
+public class UtensiliosDomesticos implements UtensiliosInterface {
 //atributos com tipo e visibilidade especificada
 
     private boolean temVassouras;
@@ -11,7 +11,6 @@ public class UtensiliosDomesticos {
     private float precoPratos;
 
     private float saldoDomesticos;
-    private float saldoTotalMercado;
 
     public UtensiliosDomesticos() {
         this.setTemVassouras(true);
@@ -21,6 +20,7 @@ public class UtensiliosDomesticos {
         this.setPrecoVassouras(28.50f);
         this.setPrecoPanelas(90.00f);
         this.setPrecoPratos(10.60f);
+        this.setSaldoDomesticos(0.0f);
 
     }
 
@@ -87,19 +87,33 @@ public class UtensiliosDomesticos {
     }
 
     public float getSaldoDomesticos() {
-        return saldoDomesticos;
+        return this.saldoDomesticos;
     }
 
     public void setSaldoDomesticos(float saldoDomesticos) {
         this.saldoDomesticos = saldoDomesticos;
     }
 
-    public float getSaldoTotalMercado() {
-        return saldoTotalMercado;
+    @Override
+    public void comprarVassouras(int quantidade) {
+        if (this.temVassouras) {
+            this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoVassouras() * quantidade));
+        }
     }
 
-    public void setSaldoTotalMercado(float saldoTotalMercado) {
-        this.saldoTotalMercado = saldoTotalMercado;
+    @Override
+    public void comprarPanelas(int quantidade) {
+        if (this.temPanelas) {
+            this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoPanelas() * quantidade));
+        }
+    }
+
+    @Override
+    public void comprarPratos(int quantidade) {
+
+        if (this.temPratos) {
+            this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoPratos() * quantidade));
+        }
     }
 
 }
