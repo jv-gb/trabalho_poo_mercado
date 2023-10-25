@@ -11,6 +11,7 @@ public class UtensiliosDomesticos implements UtensiliosInterface {
     private float precoPratos;
 
     private float saldoDomesticos;
+//construtores sobrecarregados
 
     public UtensiliosDomesticos() {
         this.setTemVassouras(true);
@@ -37,6 +38,7 @@ public class UtensiliosDomesticos implements UtensiliosInterface {
         this.setPrecoPratos(pr);
 
     }
+    //getters e setters
 
     public boolean getTemVassouras() {
         return temVassouras;
@@ -93,11 +95,14 @@ public class UtensiliosDomesticos implements UtensiliosInterface {
     public void setSaldoDomesticos(float saldoDomesticos) {
         this.saldoDomesticos = saldoDomesticos;
     }
+//implementação dos metodos da interfaces publica UtensiliosInteface
 
     @Override
     public void comprarVassouras(int quantidade) {
         if (this.temVassouras) {
             this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoVassouras() * quantidade));
+        } else {
+            System.out.println("Não temos carne de vassouras...");
         }
     }
 
@@ -105,6 +110,8 @@ public class UtensiliosDomesticos implements UtensiliosInterface {
     public void comprarPanelas(int quantidade) {
         if (this.temPanelas) {
             this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoPanelas() * quantidade));
+        } else {
+            System.out.println("Não temos carne de panelas...");
         }
     }
 
@@ -113,6 +120,8 @@ public class UtensiliosDomesticos implements UtensiliosInterface {
 
         if (this.temPratos) {
             this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoPratos() * quantidade));
+        } else {
+            System.out.println("Não temos pratos...");
         }
     }
 

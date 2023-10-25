@@ -5,30 +5,36 @@ import java.util.Scanner;
 public class Supermercado {
 
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        Scanner tecladoInt = new Scanner(System.in);
+        Scanner tecladoString = new Scanner(System.in);
         UtensiliosDomesticos u = new UtensiliosDomesticos();
-        Caixa c = new Caixa();
+        Mercado mercado1 = new Mercado();
 
         int qtdVassouras, qtdPanelas, qtdPratos, kgDeBoi, kgDeFrango, kgDePorco;
+        System.out.println("Qual o nome do mercado?");
+        mercado1.setNome(tecladoString.next());
+
+        System.out.println("Mercado " + mercado1.getNome());
+        System.out.println("--------------------------");
         System.out.println("Quantas vassouras deseja comprar? ");
-        qtdVassouras = teclado.nextInt();
+        qtdVassouras = tecladoInt.nextInt();
 
         System.out.println("Quantas panelas deseja comprar? ");
-        qtdPanelas = teclado.nextInt();
+        qtdPanelas = tecladoInt.nextInt();
 
         System.out.println("Quantas pratos deseja comprar? ");
-        qtdPratos = teclado.nextInt();
+        qtdPratos = tecladoInt.nextInt();
 
         System.out.println("Quantos KG de boi deseja comprar? ");
-        kgDeBoi = teclado.nextInt();
+        kgDeBoi = tecladoInt.nextInt();
 
         System.out.println("Quantos KG de frango deseja comprar? ");
-        kgDeFrango = teclado.nextInt();
+        kgDeFrango = tecladoInt.nextInt();
 
         System.out.println("Quantos KG de porco deseja comprar? ");
-        kgDePorco = teclado.nextInt();
+        kgDePorco = tecladoInt.nextInt();
 
-        c.exibirSaldoDoMercado(qtdVassouras, qtdPanelas, qtdPratos,kgDeBoi,kgDeFrango,kgDePorco);
+        mercado1.exibirSaldoDoMercado(qtdVassouras, qtdPanelas, qtdPratos, kgDeBoi, kgDeFrango, kgDePorco);
 
     }
 

@@ -1,14 +1,23 @@
 package supermercado;
 
-public class Caixa {
+public class Mercado {
 
-    UtensiliosDomesticos ut = new UtensiliosDomesticos();
-    private Acougue acougue = new Acougue();
-    private UtensiliosDomesticos utensiliosDomesticos = new UtensiliosDomesticos();
+    private String nome;
 
-    private float saldoTotalDoMercado;
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public void exibirSaldoDoMercado(int qtdVassouras, int qtdPanelas, int qtdPratos, int qtdBoi, int qtdFrango, int qtdPorco) {
+        Acougue acougue = new Acougue();
+        UtensiliosDomesticos utensiliosDomesticos = new UtensiliosDomesticos();
+
+        float saldoTotalDoMercado;
+
         utensiliosDomesticos.comprarVassouras(qtdVassouras);
         utensiliosDomesticos.comprarPanelas(qtdPanelas);
         utensiliosDomesticos.comprarPratos(qtdPratos);
@@ -27,9 +36,6 @@ public class Caixa {
 
         System.out.print("Saldo total do mercado: ");
         System.out.println(saldoTotalDoMercado);
-        
-        
-        
 
     }
 

@@ -12,6 +12,7 @@ public class Acougue implements AcougueInterface {
     private float precoPorcoKg;
 
     private float saldoAcougue;
+//construtores sobrecarregados
 
     public Acougue() {
         this.setTemcarneDePorco(true);
@@ -37,6 +38,7 @@ public class Acougue implements AcougueInterface {
         this.setPrecoBoiKg(b);
 
     }
+//getters e setters
 
     public boolean getTemcarneDePorco() {
         return temcarneDePorco;
@@ -93,11 +95,14 @@ public class Acougue implements AcougueInterface {
     public void setSaldoAcougue(float saldoAcougue) {
         this.saldoAcougue = saldoAcougue;
     }
+//implementação dos metodos da interfaces publica AcougueInterface
 
     @Override
     public void comprarBoi(int quantidade) {
         if (this.temcarneDeBoi) {
             this.setSaldoAcougue(getSaldoAcougue() + (this.getPrecoBoi() * quantidade));
+        } else {
+            System.out.println("Não temos carne de boi, volte outro dia");
         }
 
     }
@@ -106,6 +111,8 @@ public class Acougue implements AcougueInterface {
     public void comprarFrango(int quantidade) {
         if (this.temcarneDeFrango) {
             this.setSaldoAcougue(getSaldoAcougue() + (this.getPrecoFrango() * quantidade));
+        } else {
+            System.out.println("Não temos carne de frango, volte outro dia");
         }
     }
 
@@ -113,6 +120,8 @@ public class Acougue implements AcougueInterface {
     public void comprarPorco(int quantidade) {
         if (this.temcarneDePorco) {
             this.setSaldoAcougue(getSaldoAcougue() + (this.getPrecoPorco() * quantidade));
+        } else {
+            System.out.println("Não temos carne de porco, volte outro dia");
         }
     }
 
