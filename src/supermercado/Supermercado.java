@@ -1,41 +1,45 @@
 package supermercado;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Supermercado {
 
     public static void main(String[] args) {
-        Scanner tecladoInt = new Scanner(System.in);
-        Scanner tecladoString = new Scanner(System.in);
-        UtensiliosDomesticos u = new UtensiliosDomesticos();
-        Mercado mercado1 = new Mercado();
+        ArrayList<Mercado> supermercados = new ArrayList();
 
-        int qtdVassouras, qtdPanelas, qtdPratos, kgDeBoi, kgDeFrango, kgDePorco;
-        System.out.println("Qual o nome do mercado?");
-        mercado1.setNome(tecladoString.next());
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Quantos mercados deseja registrar?");
+        int n = teclado.nextInt();
 
-        System.out.println("Mercado " + mercado1.getNome());
-        System.out.println("--------------------------");
-        System.out.println("Quantas vassouras deseja comprar? ");
-        qtdVassouras = tecladoInt.nextInt();
+        for (int i = 0; i < n; i++) {
+            System.out.println("Qual o nome do mercado " + (i + 1) + "?");
+            String nome = teclado.next();
+            System.out.println("Quantas vassouras foram vendidas? ");
+            int qtdVassouras = teclado.nextInt();
+            System.out.println("Quantas panelas foram vendidas? ");
+            int qtdPanelas = teclado.nextInt();
+            System.out.println("Quantos pratos foram vendidas? ");
+            int qtdPratos = teclado.nextInt();
+            System.out.println("Quantos KG de boi foram vendidos? ");
+            int qtdBoi = teclado.nextInt();
+            System.out.println("Quantos KG de frango foram vendidos? ");
+            int qtdFrango = teclado.nextInt();
+            System.out.println("Quantos KG de Porco foram vendidos? ");
+            int qtdPorco = teclado.nextInt();
 
-        System.out.println("Quantas panelas deseja comprar? ");
-        qtdPanelas = tecladoInt.nextInt();
+            supermercados.add(new Mercado(nome, qtdVassouras, qtdPanelas, qtdPratos, qtdBoi, qtdFrango, qtdPorco));
+        }
 
-        System.out.println("Quantas pratos deseja comprar? ");
-        qtdPratos = tecladoInt.nextInt();
+        for (int i = 0; i < supermercados.size(); i++) {
+            System.out.println("-------------------------------------------------");
+            System.out.println("Supermercado " + supermercados.get(i).getNome());
+            System.out.println("-------------------------------------------------");
+            System.out.println("Saldo do acougue R$: " + supermercados.get(i).getSaldoAcougue());
+            System.out.println("Saldo da sessao de utensilios domesticos R$: " + supermercados.get(i).getSaldoUtensilios());
+            System.out.println("Saldo total do mercado R$: " + supermercados.get(i).getSaldoTotal());
 
-        System.out.println("Quantos KG de boi deseja comprar? ");
-        kgDeBoi = tecladoInt.nextInt();
-
-        System.out.println("Quantos KG de frango deseja comprar? ");
-        kgDeFrango = tecladoInt.nextInt();
-
-        System.out.println("Quantos KG de porco deseja comprar? ");
-        kgDePorco = tecladoInt.nextInt();
-
-        mercado1.exibirSaldoDoMercado(qtdVassouras, qtdPanelas, qtdPratos, kgDeBoi, kgDeFrango, kgDePorco);
+        }
 
     }
-
 }

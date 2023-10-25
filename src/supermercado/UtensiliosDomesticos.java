@@ -3,9 +3,6 @@ package supermercado;
 public class UtensiliosDomesticos implements UtensiliosInterface {
 //atributos com tipo e visibilidade especificada
 
-    private boolean temVassouras;
-    private boolean temPanelas;
-    private boolean temPratos;
     private float precoVassouras;
     private float precoPanelas;
     private float precoPratos;
@@ -14,21 +11,11 @@ public class UtensiliosDomesticos implements UtensiliosInterface {
 //construtores sobrecarregados
 
     public UtensiliosDomesticos() {
-        this.setTemVassouras(true);
-        this.setTemPanelas(true);
-        this.setTemPratos(true);
 
         this.setPrecoVassouras(28.50f);
         this.setPrecoPanelas(90.00f);
         this.setPrecoPratos(10.60f);
         this.setSaldoDomesticos(0.0f);
-
-    }
-
-    public UtensiliosDomesticos(boolean v, boolean pa, boolean pr) {
-        this.setTemVassouras(v);
-        this.setTemPanelas(pa);
-        this.setTemPratos(pr);
 
     }
 
@@ -39,30 +26,6 @@ public class UtensiliosDomesticos implements UtensiliosInterface {
 
     }
     //getters e setters
-
-    public boolean getTemVassouras() {
-        return temVassouras;
-    }
-
-    public void setTemVassouras(boolean temVassouras) {
-        this.temVassouras = temVassouras;
-    }
-
-    public boolean getTemPanelas() {
-        return temPanelas;
-    }
-
-    public void setTemPanelas(boolean temPanelas) {
-        this.temPanelas = temPanelas;
-    }
-
-    public boolean getTemPratos() {
-        return temPratos;
-    }
-
-    public void setTemPratos(boolean temPratos) {
-        this.temPratos = temPratos;
-    }
 
     public float getPrecoVassouras() {
         return precoVassouras;
@@ -99,30 +62,23 @@ public class UtensiliosDomesticos implements UtensiliosInterface {
 
     @Override
     public void comprarVassouras(int quantidade) {
-        if (this.temVassouras) {
-            this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoVassouras() * quantidade));
-        } else {
-            System.out.println("Não temos carne de vassouras...");
-        }
+
+        this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoVassouras() * quantidade));
+
     }
 
     @Override
     public void comprarPanelas(int quantidade) {
-        if (this.temPanelas) {
-            this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoPanelas() * quantidade));
-        } else {
-            System.out.println("Não temos carne de panelas...");
-        }
+
+        this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoPanelas() * quantidade));
+
     }
 
     @Override
     public void comprarPratos(int quantidade) {
 
-        if (this.temPratos) {
-            this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoPratos() * quantidade));
-        } else {
-            System.out.println("Não temos pratos...");
-        }
+        this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoPratos() * quantidade));
+
     }
 
 }

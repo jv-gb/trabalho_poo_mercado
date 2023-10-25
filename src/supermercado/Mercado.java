@@ -3,16 +3,17 @@ package supermercado;
 public class Mercado {
 
     private String nome;
+    private float saldoAcougue;
+    private float saldoUtensilios;
+    private float saldoTotal;
 
-    public String getNome() {
-        return nome;
+    public Mercado(String nome, int qtdVassouras, int qtdPanelas, int qtdPratos, int qtdBoi, int qtdFrango, int qtdPorco) {
+        criarSaldoDoMercado(qtdVassouras, qtdPanelas, qtdPratos, qtdBoi, qtdFrango, qtdPorco);
+
+        this.setNome(nome);
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void exibirSaldoDoMercado(int qtdVassouras, int qtdPanelas, int qtdPratos, int qtdBoi, int qtdFrango, int qtdPorco) {
+    private void criarSaldoDoMercado(int qtdVassouras, int qtdPanelas, int qtdPratos, int qtdBoi, int qtdFrango, int qtdPorco) {
         Acougue acougue = new Acougue();
         UtensiliosDomesticos utensiliosDomesticos = new UtensiliosDomesticos();
 
@@ -28,15 +29,42 @@ public class Mercado {
 
         saldoTotalDoMercado = acougue.getSaldoAcougue() + utensiliosDomesticos.getSaldoDomesticos();
 
-        System.out.print("Saldo do acougue do mercado: ");
-        System.out.println(acougue.getSaldoAcougue());
+        this.setSaldoAcougue(acougue.getSaldoAcougue());
+        this.setSaldoUtensilios(utensiliosDomesticos.getSaldoDomesticos());
+        this.setSaldoTotal(acougue.getSaldoAcougue() + utensiliosDomesticos.getSaldoDomesticos());
 
-        System.out.print("Saldo da sessao de utensilios domesticos do mercado: ");
-        System.out.println(utensiliosDomesticos.getSaldoDomesticos());
+    }
 
-        System.out.print("Saldo total do mercado: ");
-        System.out.println(saldoTotalDoMercado);
+    public String getNome() {
+        return nome;
+    }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public float getSaldoAcougue() {
+        return saldoAcougue;
+    }
+
+    public void setSaldoAcougue(float saldoAcougue) {
+        this.saldoAcougue = saldoAcougue;
+    }
+
+    public float getSaldoUtensilios() {
+        return saldoUtensilios;
+    }
+
+    public void setSaldoUtensilios(float saldoUtensilios) {
+        this.saldoUtensilios = saldoUtensilios;
+    }
+
+    public float getSaldoTotal() {
+        return saldoTotal;
+    }
+
+    public void setSaldoTotal(float saldoTotal) {
+        this.saldoTotal = saldoTotal;
     }
 
 }
