@@ -8,17 +8,18 @@ public class Mercado {
     private float saldoTotal;
 
     public Mercado(String nome, int qtdVassouras, int qtdPanelas, int qtdPratos, int qtdBoi, int qtdFrango, int qtdPorco) {
+        //funcao privada que auxilia uma publica
         criarSaldoDoMercado(qtdVassouras, qtdPanelas, qtdPratos, qtdBoi, qtdFrango, qtdPorco);
 
         this.setNome(nome);
     }
-
+//funcao privada que auxilia uma publica
     private void criarSaldoDoMercado(int qtdVassouras, int qtdPanelas, int qtdPratos, int qtdBoi, int qtdFrango, int qtdPorco) {
         Acougue acougue = new Acougue();
         UtensiliosDomesticos utensiliosDomesticos = new UtensiliosDomesticos();
 
-        float saldoTotalDoMercado;
-
+        
+//esses metodos são chamados no construtor Mercado que é chamado na classe principal onde é preenchido
         utensiliosDomesticos.comprarVassouras(qtdVassouras);
         utensiliosDomesticos.comprarPanelas(qtdPanelas);
         utensiliosDomesticos.comprarPratos(qtdPratos);
@@ -27,7 +28,7 @@ public class Mercado {
         acougue.comprarFrango(qtdFrango);
         acougue.comprarPorco(qtdPorco);
 
-        saldoTotalDoMercado = acougue.getSaldoAcougue() + utensiliosDomesticos.getSaldoDomesticos();
+       
 
         this.setSaldoAcougue(acougue.getSaldoAcougue());
         this.setSaldoUtensilios(utensiliosDomesticos.getSaldoDomesticos());
