@@ -1,11 +1,12 @@
 package supermercado;
 
-public interface AcougueInterface {
+public interface Interface {
 //3 metodos de interface publica que multiplicam a quantidade 
 //de itens comprados x o preco dos itens
-    public abstract void comprarBoi(int quantidade);
 
-    public abstract void comprarFrango(int quantidade);
+    public abstract void comprarItem1(int quantidade);
 
-    public abstract void comprarPorco(int quantidade);
+    public abstract void comprarItem2(int quantidade);
+
+    public abstract void comprarItem3(int quantidade);
 }

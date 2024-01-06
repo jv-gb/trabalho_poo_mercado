@@ -18,6 +18,7 @@ public class Supermercado {
         for (int i = 0; i < n; i++) {
             System.out.println("Qual o nome do mercado " + (i + 1) + "?");
             String nome = teclado.next();
+
             System.out.println("Quantas vassouras foram vendidas? ");
             int qtdVassouras = teclado.nextInt();
             System.out.println("Quantas panelas foram vendidas? ");

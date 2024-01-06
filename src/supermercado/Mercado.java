@@ -21,13 +21,13 @@ public class Mercado {
         UtensiliosDomesticos utensiliosDomesticos = new UtensiliosDomesticos();
 
 //esses metodos são chamados no construtor Mercado que é chamado na classe principal onde é preenchido
-        utensiliosDomesticos.comprarVassouras(qtdVassouras);
-        utensiliosDomesticos.comprarPanelas(qtdPanelas);
-        utensiliosDomesticos.comprarPratos(qtdPratos);
+        utensiliosDomesticos.comprarItem1(qtdVassouras);
+        utensiliosDomesticos.comprarItem2(qtdPanelas);
+        utensiliosDomesticos.comprarItem3(qtdPratos);
 
-        acougue.comprarBoi(qtdBoi);
-        acougue.comprarFrango(qtdFrango);
-        acougue.comprarPorco(qtdPorco);
+        acougue.comprarItem1(qtdBoi);
+        acougue.comprarItem2(qtdFrango);
+        acougue.comprarItem3(qtdPorco);
 
         this.setSaldoAcougue(acougue.getSaldoAcougue());
         this.setSaldoUtensilios(utensiliosDomesticos.getSaldoDomesticos());

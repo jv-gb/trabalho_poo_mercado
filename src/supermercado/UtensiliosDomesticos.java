@@ -1,6 +1,6 @@
 package supermercado;
 
-public class UtensiliosDomesticos implements UtensiliosInterface {
+public class UtensiliosDomesticos implements Interface {
 //atributos com tipo e visibilidade especificada
 
     private float precoVassouras;
@@ -61,21 +61,21 @@ public class UtensiliosDomesticos implements UtensiliosInterface {
 //implementação dos metodos da interfaces publica UtensiliosInteface
 
     @Override
-    public void comprarVassouras(int quantidade) {
+    public void comprarItem1(int quantidade) {
 
         this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoVassouras() * quantidade));
 
     }
 
     @Override
-    public void comprarPanelas(int quantidade) {
+    public void comprarItem2(int quantidade) {
 
         this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoPanelas() * quantidade));
 
     }
 
     @Override
-    public void comprarPratos(int quantidade) {
+    public void comprarItem3(int quantidade) {
 
         this.setSaldoDomesticos(this.getSaldoDomesticos() + (this.getPrecoPratos() * quantidade));
 

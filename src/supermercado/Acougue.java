@@ -1,6 +1,6 @@
 package supermercado;
 
-public class Acougue implements AcougueInterface {
+public class Acougue implements Interface {
 //atributos com tipo e visibilidade especificada
 
     private float precoBoiKg;
@@ -57,27 +57,24 @@ public class Acougue implements AcougueInterface {
     public void setSaldoAcougue(float saldoAcougue) {
         this.saldoAcougue = saldoAcougue;
     }
-//implementação dos metodos da interfaces publica AcougueInterface
+//implementação dos metodos da interfaces publica Interface
 //esses metodos pegam o saldo do açougue e somam com as novas vendas
     @Override
-    public void comprarBoi(int quantidade) {
+    public void comprarItem1(int quantidade) {
 
         this.setSaldoAcougue(getSaldoAcougue() + (this.getPrecoBoi() * quantidade));
-
     }
 
     @Override
-    public void comprarFrango(int quantidade) {
+    public void comprarItem2(int quantidade) {
 
         this.setSaldoAcougue(getSaldoAcougue() + (this.getPrecoFrango() * quantidade));
-
     }
 
     @Override
-    public void comprarPorco(int quantidade) {
+    public void comprarItem3(int quantidade) {
 
         this.setSaldoAcougue(getSaldoAcougue() + (this.getPrecoPorco() * quantidade));
-
     }
 
 }
