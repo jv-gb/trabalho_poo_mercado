@@ -12,6 +12,9 @@ public class Supermercado {
         System.out.println("Quantos mercados deseja registrar?");
         int n = teclado.nextInt();
 
+        //esse loop recebe a variavel n como numero de vezes que vai rodar
+        //coloca as respostas dentro das variaveis
+        //instancia um objeto recebendo essas variaveis como parametros
         for (int i = 0; i < n; i++) {
             System.out.println("Qual o nome do mercado " + (i + 1) + "?");
             String nome = teclado.next();
@@ -35,8 +38,8 @@ public class Supermercado {
             System.out.println("-------------------------------------------------");
             System.out.println("Supermercado " + supermercados.get(i).getNome());
             System.out.println("-------------------------------------------------");
-            System.out.println("Saldo do acougue R$: " + supermercados.get(i).getSaldoAcougue());
             System.out.println("Saldo da sessao de utensilios domesticos R$: " + supermercados.get(i).getSaldoUtensilios());
+            System.out.println("Saldo do acougue R$: " + supermercados.get(i).getSaldoAcougue());
             System.out.println("Saldo total do mercado R$: " + supermercados.get(i).getSaldoTotal());
 
         }

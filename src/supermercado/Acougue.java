@@ -58,7 +58,7 @@ public class Acougue implements AcougueInterface {
         this.saldoAcougue = saldoAcougue;
     }
 //implementação dos metodos da interfaces publica AcougueInterface
-
+//esses metodos pegam o saldo do açougue e somam com as novas vendas
     @Override
     public void comprarBoi(int quantidade) {
 
